@@ -12,8 +12,11 @@ const Titulo = (props) => {
 const style = StyleSheet.create({
     titulo:{
         color:"#1976D2",
-        fontSize: 38,
-        fontWeight:"700"
+        fontSize: 58,
+        fontWeight:"700",
+        textAlign:"center",
+        marginBottom:15
+
     }
 });
 
