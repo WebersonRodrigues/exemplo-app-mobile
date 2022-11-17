@@ -2,15 +2,22 @@ import React from "react";
 import { Text, StyleSheet, View, Button, Alert} from "react-native";
 import Titulo from "../../components/Titulo";
 import MeuInput from "../../components/MeuInput";
+import { MeuText, MeuButton } from "../../styles/style-geral";
 
-const Login = () => {
+const Login = ({navigation}) => {
     
     const logar = () => {
-        // Esse cara eu uso no mobile
-        // Alert.alert("Haahahahaha")
+    // 1° Verificar se email e senha estão informados
+    // 1.1 Se não tiver, mandar mensagem ao usuario.
+    
+    // 2° Fazer uma requsição para verificar se o email e senha podem acessar o app.
+    // 2.1 Se não puder, mandar uma mensagem "Usuário ou senha inválidos."
+    // 2.2 Se sim, salvar o token e direcionar para dentro do app.
+        
+    // Direcionar para a tela de Home.
+    let email ='Fulano@gmail.com';
 
-        // Esse cara eu uso na Web
-        alert("Fui clicado!!")
+       navigation.navigate('Home', {email, doritos: "Doritos gosto muito!!!!"}); 
     }
 
     return (
@@ -25,8 +32,11 @@ const Login = () => {
                 title="Entrar"
                 onPress={logar}/>
 
+
+                {/* <MeuButton title="Entrar"></MeuButton> */}
+
             <View style={style.esqueciSenha}>
-                <Text style={style.textoEsqueciSenha}>Esqueci minha senha</Text>
+                <MeuText cor="red">Esqueci minha senha</MeuText>
             </View>
             
         </View>
